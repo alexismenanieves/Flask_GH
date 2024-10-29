@@ -10,9 +10,10 @@ jobs:
   dater:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4.2.2
       - name: Add text
         run: |
-          echo "This is the date $(date +'%Y-%m%d') >> README.md
+          echo "This is the date $(date +'%Y-%m%d')" >> README.md
           git config user.name {{ user.username }}
           git config user.email {{ user.email }}
           git add README.md
