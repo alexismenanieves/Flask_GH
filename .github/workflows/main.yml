@@ -1,21 +1,19 @@
-name: workflow for flask
+name: Workflow run
+
 on:
   push:
     branches:
-      main
+      - main
   workflow_dispatch:
 
 jobs:
-  checker:
+  greeter:
     runs-on: ubuntu-latest
     steps:
-      - name: Greetings
-        run: echo "Hello world"
-      - name: Checkout
-        uses: actions/checkout@v4.2.2
-      - name: List files in repo
+      - name: Greeting
+        run: echo "Hello stranger"
+      - name: Boasting
         run: |
-          echo "The repository ${{ github.repository }} contains these files:"
+          echo "The contents of the repo ${{ github.repository }} are:"
           tree
-      
     
