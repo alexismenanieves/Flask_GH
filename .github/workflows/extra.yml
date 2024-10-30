@@ -14,8 +14,8 @@ jobs:
       - name: Add text
         run: |
           echo "This is the date $(date +'%Y-%m%d')" >> README.md
-          git config user.name {{ user.username }}
-          git config user.email {{ user.email }}
+          git config user.name {{ secrets.ACTOR }}
+          git config user.email {{ secrets.EMAIL }}
           git add README.md
           git commit -m "Date added"
           git push
