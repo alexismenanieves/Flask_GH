@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Greeting
         run: echo "Hello stranger"
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
       - name: Boasting
         run: |
           echo "The contents of the repo ${{ github.repository }} are:"
