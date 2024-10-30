@@ -1,4 +1,4 @@
-name: Add date
+name: Show the secret
 
 on:
   push:
@@ -13,9 +13,4 @@ jobs:
       - uses: actions/checkout@v4.2.2
       - name: Add text
         run: |
-          echo "This is the date $(date +'%Y-%m%d')" >> README.md
-          git config user.name {{ secrets.ACTOR }}
-          git config user.email {{ secrets.EMAIL }}
-          git add README.md
-          git commit -m "Date added"
-          git push
+          echo "This is the secret ${{ secrets.EMAIL }}
